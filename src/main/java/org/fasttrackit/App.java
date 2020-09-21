@@ -61,7 +61,12 @@ public class App
         System.out.println("Color: " + car2.color);
         System.out.println(car2);
 
-        System.out.println("Initial name for car1 " + carReference.name);
+        double distanceForCar1 = carReference.accelerate(60,1);
+
+        double distanceForCar2 = car2.accelerate(100,1);
+
+
+        /*System.out.println("Initial name for car1 " + carReference.name);
 
         carReference.name = "Audi";
 
@@ -82,6 +87,7 @@ public class App
 
 
         car2 = null;
+        */
 
 
 
