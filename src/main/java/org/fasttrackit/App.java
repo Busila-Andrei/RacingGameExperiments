@@ -10,7 +10,7 @@ public class App
         carReference.fuelLevel = 60;
         carReference.mileage = 12.5;
         carReference.totalTraveledDistance = 0;
-        carReference.damaged = true;
+        carReference.damaged = false;
         carReference.doorCount = 1;
         carReference.color = "Red";
 
