@@ -17,9 +17,9 @@ public class App
 
         //vehicle2.totalVehicleCount = 2;
 
-        System.out.println("Total count from vehicle " + vehicle1.name + ": " + vehicle1.totalVehicleCount);
-        System.out.println("Total count from vehicle " + vehicle2.name + ": " + vehicle2.totalVehicleCount);
-        System.out.println("Total count from Vehicle class: " + vehicle2.totalVehicleCount);
+        //System.out.println("Total count from vehicle " + vehicle1.name + ": " + vehicle1.totalVehicleCount);
+        //System.out.println("Total count from vehicle " + vehicle2.name + ": " + vehicle2.totalVehicleCount);
+        //System.out.println("Total count from Vehicle class: " + vehicle2.totalVehicleCount);
 
         /*Engine autoVehicleEngine = new Engine();
         autoVehicleEngine.manufacturer = "WW";
