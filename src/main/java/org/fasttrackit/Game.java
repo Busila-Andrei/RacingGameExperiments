@@ -1,10 +1,13 @@
 package org.fasttrackit;
 
 import org.fasttrackit.utils.ScannerUtils;
-
+import org.fasttrackit.vehicles.Vehicle;
 
 
 public class Game {
+
+    private Vehicle competitor1;
+    private Vehicle competitor2;
 
     public void start() {
         System.out.println("Wolcome to the Racing Game!");
