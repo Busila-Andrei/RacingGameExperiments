@@ -1,12 +1,31 @@
 package org.fasttrackit;
 
-public class App 
+import org.fasttrackit.vehicles.AutoVehicle;
+import org.fasttrackit.vehicles.Car;
+
+public class App
 {
     public static void main( String[] args )
     {
         Game game = new Game();
         game.start();
-/*
+
+        // example
+        /*Engine engine = new Engine();
+        engine.setManufacturer("Renault");
+        engine.setCapacity(1400);
+        AutoVehicle autoVehicle = new AutoVehicle(engine);
+        AutoVehicle autoVehicle2 = new AutoVehicle();
+
+        new Car();
+        autoVehicle.accelerate(100);
+        autoVehicle2.accelerate(100, 1);
+
+
+        System.out.println("Engine capacity " + engine.getCapacity());
+        System.out.println(engine.getCapacity());
+        System.out.println(engine);
+
         Vehicle vehicle1 = new Vehicle();
         vehicle1.setName("Dacia");
 

@@ -7,6 +7,11 @@ public class AutoVehicle extends Vehicle{
     // has-a relationship (aggregation)
     private Engine engine;
 
+    // contructor overloading
+    public AutoVehicle() {
+        this(new Engine());
+    }
+
     public AutoVehicle(Engine engine) {
         this.engine = engine;
     }
