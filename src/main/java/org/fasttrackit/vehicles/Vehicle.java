@@ -25,8 +25,8 @@ public class Vehicle {
 
     // method overloading
     public double accelerate(double speed) {
-        double distance
-        accelerate(speed,1);
+        double distance =  accelerate(speed,1);
+        return distance;
     }
 
     public double accelerate(double speed, double durationInHours) {
@@ -62,9 +62,14 @@ public class Vehicle {
         fuelLevel -= usedFuel;
         System.out.println("Remaining fuel for vehicle " + name + ": " + usedFuel);
 
-
-
         return distance;
+    }
+
+    protected  Vehicle reset() {
+        totalTraveledDistance = 0;
+        damaged = false;
+
+        return this;
     }
 
     public String getName() {
@@ -133,5 +138,19 @@ public class Vehicle {
 
     public static int getTotalVehicleCount() {
         return totalVehicleCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", fuelLevel=" + fuelLevel +
+                ", mileage=" + mileage +
+                ", totalTraveledDistance=" + totalTraveledDistance +
+                ", maxSpeed=" + maxSpeed +
+                ", damaged=" + damaged +
+                ", color='" + color + '\'' +
+                ", manufacturingDate=" + manufacturingDate +
+                '}';
     }
 }

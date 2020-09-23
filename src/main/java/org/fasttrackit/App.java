@@ -2,13 +2,21 @@ package org.fasttrackit;
 
 import org.fasttrackit.vehicles.AutoVehicle;
 import org.fasttrackit.vehicles.Car;
+import org.fasttrackit.vehicles.cheater.CheatingVehicle;
 
 public class App
 {
     public static void main( String[] args )
     {
-        Game game = new Game();
-        game.start();
+        //Game game = new Game();
+       // game.start();
+
+        CheatingVehicle cheatingVehicle = new CheatingVehicle();
+        cheatingVehicle.setName("Cheater");
+
+        cheatingVehicle.accelerate(60, 1);
+
+        cheatingVehicle.accelerate(60);
 
         // example
         /*Engine engine = new Engine();
@@ -48,6 +56,7 @@ public class App
         engine1.setManufacturer("Ferrari");
         engine1.setCapacity(3000);
 
+
         Car carReference = new Car(engine1);
         carReference.setName("Ferrari");
         carReference.setMaxSpeed(300);
@@ -57,6 +66,8 @@ public class App
         carReference.setDamaged(false);
         carReference.setDoorCount(1);
         carReference.setColor("Red");
+
+        System.out.println(carReference);
 
         System.out.println("Properties of car " + carReference.getName());
         System.out.println("Max speed: " + carReference.getMaxSpeed());
