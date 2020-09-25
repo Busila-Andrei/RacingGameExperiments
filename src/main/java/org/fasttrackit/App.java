@@ -5,6 +5,10 @@ import org.fasttrackit.vehicles.Car;
 import org.fasttrackit.vehicles.Vehicle;
 import org.fasttrackit.vehicles.cheater.CheatingVehicle;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class App
 {
     public static void main( String[] args )
@@ -12,7 +16,21 @@ public class App
         Game game = new Game();
         game.start();
 
-        /*String email = "flaviu@fasttrackid.org";
+        /*
+        List<String> favoriteAuthors = new ArrayList<>();
+        favoriteAuthors.add("Tolkien");
+        favoriteAuthors.add("Lewis");
+        favoriteAuthors.add("Tolstois");
+
+        System.out.println(favoriteAuthors);
+        boolean tolkienFavorite = favoriteAuthors.contains("Tolkien");
+        System.out.println(tolkienFavorite);
+
+        int[] integers = {1, 2, 3, 4};
+
+        List<Integer> integerList = Arrays.asList(10, 20, 30);
+        int firstNumber = integerList.get(0);
+        String email = "flaviu@fasttrackid.org";
         String[] emailParts = email.split("@");
 
         System.out.println("First part: " + emailParts[0]);
