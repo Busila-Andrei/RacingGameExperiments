@@ -2,6 +2,8 @@ package org.fasttrackit;
 
 import org.fasttrackit.competitor.Mobile;
 import org.fasttrackit.competitor.MobileComparator;
+import org.fasttrackit.persistance.FileRankingRepository;
+import org.fasttrackit.persistance.RankingsRepository;
 import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
@@ -18,6 +20,8 @@ public class Game {
 
     private boolean winnerNotKnow = true;
     private Track selectedTrack;
+
+    private RankingsRepository rankingsRepository = new FileRankingRepository();
 
 
     public void start() throws Exception {
@@ -43,7 +47,10 @@ public class Game {
         for (int i = 0; i< competitors.size();i++){
             System.out.println((i+1) + ". " + competitors.get(i).getName() + ": " +
                     competitors.get(i).getTotalTraveledDistance() + " km");
+            rankingsRepository.addRankingItem(i+1, competitors.get(i).getName(), competitors.get(i).getTotalTraveledDistance());
         }
+
+        rankingsRepository.close();
 
     }
 
