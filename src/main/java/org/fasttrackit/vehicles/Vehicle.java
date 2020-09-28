@@ -2,7 +2,7 @@ package org.fasttrackit.vehicles;
 
 import java.time.LocalDate;
 
-public class Vehicle {
+public abstract class Vehicle {
 
     // class varialbe (static variable)
     static int totalVehicleCount;

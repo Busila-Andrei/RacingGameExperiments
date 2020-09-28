@@ -12,6 +12,10 @@ public class Car extends AutoVehicle{
         super(engine);
     }
 
+    public Car() {
+
+    }
+
     public int getDoorCount() {
         return doorCount;
     }
