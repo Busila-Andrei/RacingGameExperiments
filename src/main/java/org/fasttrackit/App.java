@@ -11,10 +11,26 @@ public class App
 {
     public static void main( String[] args )
     {
-        Game game = new Game();
-        game.start();
+        //Game game = new Game();
+        //game.start();
 
         /*
+        String userLanguage = "ro";
+
+        Map<String, String> descriptionTranslations = new HashMap<>();
+        descriptionTranslations.put("en", "Some description");
+        descriptionTranslations.put("ro", "O descriere");
+
+        String description = descriptionTranslations.get(userLanguage);
+        System.out.println(description);
+
+        for (Map.Entry<String, String> entry : descriptionTranslations.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+
+
+
         Set<String> cities = new HashSet<>();
         cities.add("Cluj_Napoca");
         cities.add("Bucuresti");
