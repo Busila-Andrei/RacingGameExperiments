@@ -1,6 +1,7 @@
 package org.fasttrackit;
 
 import org.fasttrackit.competitor.Mobile;
+import org.fasttrackit.competitor.MobileComparator;
 import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
@@ -29,6 +30,21 @@ public class Game {
 
        initializeCompetitors();
        loopRounds();
+
+       processRanking();
+    }
+
+    private void processRanking() {
+
+        competitors.sort(Collections.reverseOrder(new MobileComparator()));
+
+        System.out.println("Rankings:");
+
+        for (int i = 0; i< competitors.size();i++){
+            System.out.println((i+1) + ". " + competitors.get(i).getName() + ": " +
+                    competitors.get(i).getTotalTraveledDistance() + " km");
+        }
+
     }
 
     private void loopRounds() {
