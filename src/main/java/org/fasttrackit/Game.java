@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import org.fasttrackit.competitor.Mobile;
 import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
@@ -12,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Game {
 
     private Track[] tracks = new Track[3];
-    private List<Vehicle> competitors = new ArrayList<>();
+    private List<Mobile> competitors = new ArrayList<>();
 
 
     public void start() {
@@ -30,10 +31,10 @@ public class Game {
     private void playOneRound() {
         System.out.println("New round.");
 
-        for (Vehicle competitor : competitors) {
+        for (Mobile competitor : competitors) {
             System.out.println("It's " + competitor.getName() + "'s turn.");
             double speed = getAccelerationSpeedFromUser();
-            competitor.accelerate(speed);
+            competitor.accelerate(speed,1);
         }
     }
 

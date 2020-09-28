@@ -1,8 +1,10 @@
 package org.fasttrackit.competitor.vehicle;
 
+import org.fasttrackit.competitor.Mobile;
+
 import java.time.LocalDate;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Mobile {
 
     // class varialbe (static variable)
     static int totalVehicleCount;
@@ -23,6 +25,10 @@ public abstract class Vehicle {
         totalVehicleCount++;
     }
 
+
+    public boolean canMove() {
+        return fuelLevel > 0 && !damaged;
+    }
     // method overloading
     public double accelerate(double speed) {
         double distance =  accelerate(speed,1);
@@ -30,7 +36,7 @@ public abstract class Vehicle {
     }
 
     public double accelerate(double speed, double durationInHours) {
-        if(fuelLevel <= 0 || damaged) {
+        if(!canMove()) {
             System.out.println("You cannot accelerate.");
             return 0;
         }
