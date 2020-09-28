@@ -5,10 +5,7 @@ import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -22,7 +19,7 @@ public class Game {
     private Track selectedTrack;
 
 
-    public void start() {
+    public void start() throws Exception {
         System.out.println("Wolcome to the Racing Game!");
 
         initializeTrack();
@@ -119,10 +116,18 @@ public class Game {
         return ScannerUtils.nextLine();
     }
 
-    private Track getSelectedTrackFromUser() {
+    private Track getSelectedTrackFromUser() throws Exception {
         System.out.println("Please select a track:");
-        int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();
-        return tracks[trackNumber - 1];
+        try {
+            int trackNumber = ScannerUtils.nextIntAndMoveToNextLine();
+            return tracks[trackNumber - 1];
+        }catch (InputMismatchException e) {
+            throw new Exception("You have entered an invalid value.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new RuntimeException("You have entered an invalid number.");
+        } finally {
+            System.out.println("Finally block is always executed.");
+        }
     }
 
     private  double getAccelerationSpeedFromUser() {
